@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABHI - Profile & Socials</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1c2c 0%, #4a192c 100%);
+            min-height: 100vh;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animated Background Mesh */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .blob-1 { background: #8b5cf6; width: 300px; height: 300px; top: -50px; left: -50px; }
+        .blob-2 { background: #ec4899; width: 250px; height: 250px; bottom: 10%; right: -20px; animation-delay: 2s; }
+        .blob-3 { background: #3b82f6; width: 200px; height: 200px; top: 40%; left: 30%; animation-delay: 4s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 40px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Hover Animations */
+        .social-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar-glow {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .avatar-glow:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body class="text-white antialiased flex flex-col items-center py-12 px-4 sm:px-0">
+
+    <!-- Background Elements -->
+    <div class="bg-mesh">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-lg z-10">
+        
+        <!-- Profile Card -->
+        <div class="glass-card rounded-3xl p-8 mb-6 text-center shadow-2xl">
+            <!-- Profile Picture Wrapper -->
+            <div class="relative mx-auto w-32 h-32 mb-6">
+                <div class="absolute inset-0 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-full blur opacity-75 animate-pulse"></div>
+                <img 
+                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Abhi&backgroundColor=b6e3f4" 
+                    alt="Profile Picture" 
+                    class="relative w-full h-full rounded-full border-4 border-white/10 object-cover bg-white/5 avatar-glow cursor-pointer"
+                >
+                <!-- Verification Badge (Optional) -->
+                <div class="absolute bottom-1 right-1 bg-blue-500 text-white rounded-full p-1.5 w-8 h-8 flex items-center justify-center border-4 border-[#1a1c2c]" title="Verified">
+                    <i class="fas fa-check text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Name & Bio -->
+            <h1 class="text-3xl font-bold mb-2 tracking-tight">ABHI</h1>
+            <p class="text-purple-300 font-medium mb-4 text-sm uppercase tracking-wider">Digital Creator</p>
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
+                Welcome to my personal page. Connect with me on my social channels below! 🚀<br>
+                Based in Bengaluru, India. 🇮🇳
+            </p>
+
+            <!-- Quick Stats / Tags -->
+            <div class="flex justify-center gap-3 flex-wrap mb-2">
+                <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-semibold border border-white/10 hover:bg-white/10 transition-colors cursor-default">
+                    🚀 Creator
+                </span>
+                <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-semibold border border-white/10 hover:bg-white/10 transition-colors cursor-default">
+                    📸 Socials
+                </span>
+                <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-semibold border border-white/10 hover:bg-white/10 transition-colors cursor-default">
+                    🇮🇳 Bengaluru
+                </span>
+            </div>
+        </div>
+
+        <!-- Social Links Section -->
+        <div class="space-y-4">
+            
+            <!-- Email (Primary Contact) -->
+            <a href="mailto:mons007x@gmail.com" class="social-link glass-card block p-4 rounded-xl flex items-center justify-between group no-underline text-white border-l-4 border-purple-500">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope text-white text-lg"></i>
+                    </div>
+                    <span class="font-semibold text-lg">Send Email</span>
+                </div>
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i class="fas fa-arrow-right text-gray-300"></i>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/mons007x?igsh=empubzQ1MmZoeHEx" target="_blank" class="social-link glass-card block p-4 rounded-xl flex items-center justify-between group no-underline text-white">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fab fa-instagram text-white text-lg"></i>
+                    </div>
+                    <span class="font-semibold text-lg">Instagram</span>
+                </div>
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i class="fas fa-arrow-right text-gray-300"></i>
+                </div>
+            </a>
+
+            <!-- Twitter / X -->
+            <a href="https://x.com/Mons007x?t=sbC0so--yBuChtmX5UXnWA&s=09" target="_blank" class="social-link glass-card block p-4 rounded-xl flex items-center justify-between group no-underline text-white">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fab fa-x-twitter text-white text-lg"></i>
+                    </div>
+                    <span class="font-semibold text-lg">Twitter / X</span>
+                </div>
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i class="fas fa-arrow-right text-gray-300"></i>
+                </div>
+            </a>
+
+            <!-- Snapchat -->
+            <a href="https://www.snapchat.com/add/obi07x?share_id=Q8jDmQkHGFg&locale=en-IN" target="_blank" class="social-link glass-card block p-4 rounded-xl flex items-center justify-between group no-underline text-white">
+                <div class="flex items-center gap-4">
+                    <!-- Snapchat Yellow #FFFC00 -->
+                    <div class="w-10 h-10 rounded-full bg-[#FFFC00] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fab fa-snapchat-ghost text-black text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-lg">Snapchat</span>
+                </div>
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0">
+                    <i class="fas fa-arrow-right text-gray-300"></i>
+                </div>
+            </a>
+            
+        </div>
+
+        <!-- Contact / Details Accordion -->
+        <div class="mt-8">
+            <h2 class="text-xl font-bold mb-4 px-2 flex items-center gap-2">
+                <i class="far fa-address-card text-purple-400"></i> Other Details
+            </h2>
+            
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <!-- Location Item -->
+                <div class="p-5 hover:bg-white/5 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase font-semibold">Location</p>
+                            <p class="text-white">Bengaluru, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Save Contact Button -->
+        <div class="mt-8 text-center">
+            <button onclick="shareProfile()" class="bg-white text-black font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto">
+                <i class="fas fa-share-alt"></i> Share Profile
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 ABHI. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- Simple Script for sharing -->
+    <script>
+        function shareProfile() {
+            const shareData = {
+                title: 'ABHI Profile',
+                text: 'Check out my profile and links!',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch((err) => console.log('Error sharing', err));
+            } else {
+                // Fallback to clipboard
+                const tempInput = document.createElement('input');
+                document.body.appendChild(tempInput);
+                tempInput.value = window.location.href;
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                // Show a simple toast or alert alternative
+                const btn = document.querySelector('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Link Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
